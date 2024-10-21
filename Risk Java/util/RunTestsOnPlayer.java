@@ -3,16 +3,13 @@ package util;
 import java.util.Random;
 import java.awt.Color;
 
-import participant.DummyPlayer;
-import participant.ExamplePlayer1;
-import participant.ExamplePlayer2;
-import participant.PlayerLogic;
+import participant.*;
 
 public class RunTestsOnPlayer {
 
     public static void main(String[] args){
     //INSERT PLAYER TO BE TESTED HERE VVV
-    ExamplePlayer2 sl1 = new ExamplePlayer2();
+    MyIllogic sl1 = new MyIllogic();
     //INSERT PLAYER TO BE TESTED HERE ^^^
 
 

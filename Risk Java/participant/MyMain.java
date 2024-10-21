@@ -3,17 +3,16 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 import participant.*;
 
-public class Main {
+public class MyMain {
 
     public static void main(String[] args){
         System.out.println("test");
 
-        ExamplePlayer1 sl1 = new ExamplePlayer1();
-        ExamplePlayer1 sl2 = new ExamplePlayer1();
+        //ExamplePlayer1 sl1 = new ExamplePlayer1();
+        //ExamplePlayer1 sl2 = new ExamplePlayer1();
         //ExamplePlayer1 sl3 = new ExamplePlayer1();
         //ExamplePlayer1 sl4 = new ExamplePlayer1();
 
@@ -22,8 +21,8 @@ public class Main {
         //ExamplePlayer2 sl3 = new ExamplePlayer2();
         //ExamplePlayer2 sl4 = new ExamplePlayer2();
 
-        //MyIllogic sl1 = new MyIllogic();
-        //MyIllogic sl2 = new MyIllogic();
+        MyIllogic sl1 = new MyIllogic();
+        MyIllogic sl2 = new MyIllogic();
         MyIllogic sl3 = new MyIllogic();
         MyIllogic sl4 = new MyIllogic();
 
@@ -38,7 +37,7 @@ public class Main {
             }
 
             if(playerLogics[i].getCustomColor() != null){
-                player.setColors(playerLogics[i].getCustomColor()[0], playerLogics[i].getCustomColor()[1]);
+                player.setColors(sl1.getCustomColor()[0], playerLogics[i].getCustomColor()[1]);
             }
             else{
                 Random rand = new Random();
@@ -67,7 +66,7 @@ public class Main {
 
             players[i] = player;
         }
-        
+
         //In the tragic case that two players choose the same colors, one will have to be set to a different color.
         for(int i = 0; i < players.length; i++){
             for(int j = i+1; j < players.length; j++){
@@ -92,10 +91,10 @@ public class Main {
                 }
             }
         }
-        
+
 
         World world = MapReader.readFile("Risk Java\\util\\BasicWorld.txt");
-        
+
         Game game = new Game(players, world, world.getGraphicProvinces());
         String[] backgroundImages = {"Risk Java\\util\\top-view-of-sea-in-the-ocean-background-footage-for-traveling-4k-free-video.jpg", "Risk Java\\util\\worldimg.png"};
 
@@ -103,7 +102,7 @@ public class Main {
 
         String result = game.startGame(4*25, test);
         System.out.println("Result: " + result);
-        
+
     }
 
 }
