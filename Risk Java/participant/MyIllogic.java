@@ -53,7 +53,7 @@ public class MyIllogic extends PlayerLogic {
                             maxWeak = owned;
                             returnArray.add(new DeployCommand(1, owned));
                             troopsPlaced++;
-                            GL.LogMessage(1 + " troops placed in " + owned);
+                            //GL.LogMessage(1 + " troops placed in " + owned);
                         }
                     }
                 }
@@ -71,7 +71,7 @@ public class MyIllogic extends PlayerLogic {
                             maxWeak = owned;
                             returnArray.add(new DeployCommand(1, owned));
                             troopsPlaced++;
-                            GL.LogMessage(1 + " troops placed in " + owned);
+                            //GL.LogMessage(1 + " troops placed in " + owned);
                         }
                     }
                 }
@@ -83,18 +83,18 @@ public class MyIllogic extends PlayerLogic {
                     if (target.getOwner() != s.getMyPlayer()) {
                         returnArray.add(new DeployCommand(1, owned));
                         troopsPlaced++;
-                        GL.LogMessage(1 + " troops placed in " + owned);
+                        //GL.LogMessage(1 + " troops placed in " + owned);
                     }
                 }
             }
         }
         if (troopsPlaced < numTroopstoPlace) {
             returnArray.add(new DeployCommand(numTroopstoPlace - troopsPlaced, maxWeak));
-            GL.LogMessage("Gave up and placed" + (numTroopstoPlace - troopsPlaced) + "troops placed in " + maxWeak);
+            //GL.LogMessage("Gave up and placed" + (numTroopstoPlace - troopsPlaced) + "troops placed in " + maxWeak);
         }
         while(troopsPlaced > numTroopstoPlace) {
             returnArray.remove(returnArray.iterator().next());
-            GL.LogMessage("Removed one command");
+            //GL.LogMessage("Removed one command");
             troopsPlaced--;
         }
 
@@ -169,7 +169,7 @@ public class MyIllogic extends PlayerLogic {
                     neighbors.add(target);
                     borders.add(owned);
                     int diff = target.getNumSoldiers() - owned.getNumSoldiers();
-                    GL.LogMessage(target.getName() + " :" + target.getNumSoldiers() + " is theirs vs " + owned.getName() + " :" + owned.getNumSoldiers() + " is mine");
+                    //GL.LogMessage(target.getName() + " :" + target.getNumSoldiers() + " is theirs vs " + owned.getName() + " :" + owned.getNumSoldiers() + " is mine");
                     if (diff >= maxWeakness){
                         maxWeakness = diff;
                         destination = owned;
@@ -180,7 +180,7 @@ public class MyIllogic extends PlayerLogic {
         //find max distant
         int maxInsideTroops = 1;
         if(destination != null) {
-            GL.LogMessage("destination: " + destination.getName());
+            //GL.LogMessage("destination: " + destination.getName());
             if(Game.possibleDestinations(destination) != null) {
                 Province possSource = null;/*closest(Game.possibleDestinations(destination), s.getMyPlayer());*/
                 for(Province p : Game.possibleDestinations(destination)){
